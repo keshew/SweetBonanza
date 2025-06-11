@@ -5,8 +5,8 @@ public enum SweetImageName: String {
     case recipesBack, pauseButton, helpButton, backButton
     case backForButton
     case squareButtonLevel
-    case dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9
-    case recept1, recept2, recept3, recept4, recept5, recept6, recept7, recept8, recept9
+    case dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9, dish10, dish11, dish12, dish13, dish14
+    case recept1, recept2, recept3, recept4, recept5, recept6, recept7, recept8, recept9, recept10, recept11, recept12, recept13, recept14
     case onToggle, offToggle
     case timeLine
     case itemToCook1, itemToCook2, itemToCook3, itemToCook4

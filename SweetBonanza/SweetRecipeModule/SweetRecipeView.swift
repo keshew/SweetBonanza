@@ -6,9 +6,15 @@ struct SweetRecipeView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Image(.mainBack)
-                    .resizable()
-                    .ignoresSafeArea()
+                if let selectedImage = UserDefaultsManager().selectedSweetImage() {
+                    Image("\(selectedImage)")
+                        .resizable()
+                        .ignoresSafeArea()
+                } else {
+                    Image(.mainBack)
+                        .resizable()
+                        .ignoresSafeArea()
+                }
                 
                 Image(.shadowMain)
                     .resizable()
@@ -41,9 +47,9 @@ struct SweetRecipeView: View {
                             Image(.recipesBack)
                                 .resizable()
                                 .frame(width: geometry.size.width * 0.853,
-                                       height: geometry.size.height * 0.444)
+                                       height: geometry.size.height * 0.644)
                             
-                            LazyVGrid(columns: sweetRecipeModel.gridItem, spacing: geometry.size.width * 0.051) { // 20
+                            LazyVGrid(columns: sweetRecipeModel.gridItem, spacing: geometry.size.width * 0.051) { 
                                 ForEach(sweetRecipeModel.recipes.indices, id: \.self) { index in
                                     if sweetRecipeModel.recipes[index].isOpen {
                                         NavigationLink(destination: SweetDetailRecipeView(recipe: sweetRecipeModel.recipes[index])) {
@@ -51,7 +57,9 @@ struct SweetRecipeView: View {
                                                 .resizable()
                                                 .frame(width: geometry.size.width * 0.188,
                                                        height: geometry.size.width * 0.188)
+                                         
                                         }
+                                        .padding(.leading, (index == 12 || index == 13) ? UIScreen.main.bounds.width * (100 / 408) : 0)
                                     } else {
                                         ZStack {
                                             Image(sweetRecipeModel.recipes[index].image)
@@ -71,6 +79,7 @@ struct SweetRecipeView: View {
                                                 .frame(width: geometry.size.width * 0.18,
                                                        height: geometry.size.height * 0.095)
                                         }
+                                        .padding(.leading, (index == 12 || index == 13) ? UIScreen.main.bounds.width * (100 / 408) : 0)
                                     }
                                 }
                             }

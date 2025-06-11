@@ -8,9 +8,15 @@ struct SweetDetailRecipeView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Image(.mainBack)
-                    .resizable()
-                    .ignoresSafeArea()
+                if let selectedImage = UserDefaultsManager().selectedSweetImage() {
+                    Image("\(selectedImage)")
+                        .resizable()
+                        .ignoresSafeArea()
+                } else {
+                    Image(.mainBack)
+                        .resizable()
+                        .ignoresSafeArea()
+                }
                 
                 Image(.shadowMain)
                     .resizable()

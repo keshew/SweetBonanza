@@ -25,6 +25,13 @@ struct SweetWinView: View {
                             .offset(x: -geometry.size.width * 0.255,
                                      y: geometry.size.height * 0.053)
                         
+                        Image("money")
+                            .resizable()
+                            .frame(width: geometry.size.width * 0.128,
+                                   height: geometry.size.height * 0.025)
+                            .offset(x: -geometry.size.width * 0.06,
+                                     y: geometry.size.height * 0.09)
+                        
                         HStack(spacing: 2) {
                             NavigationLink(destination: SweetMenuView()) {
                                 ZStack {
@@ -50,7 +57,7 @@ struct SweetWinView: View {
                                 }
                             }
                         }
-                        .offset(y: geometry.size.height * 0.145)
+                        .offset(y: geometry.size.height * 0.142)
                     }
                 }
             }

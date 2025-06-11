@@ -6,6 +6,7 @@ struct SweetPauseView: View {
     @Binding var isPause: Bool
     var scene: SKScene
     var dish: RecipeModel
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {

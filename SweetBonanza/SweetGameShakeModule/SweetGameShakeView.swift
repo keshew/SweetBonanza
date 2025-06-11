@@ -65,7 +65,7 @@ class SweetGameShakeSpriteKit: SKScene, SKPhysicsContactDelegate {
     }
 
     func createMainView() {
-        let gameBackground = SKSpriteNode(imageNamed: SweetImageName.mainBack.rawValue)
+        let gameBackground = SKSpriteNode(imageNamed:  UserDefaultsManager().selectedSweetImage() ?? SweetImageName.mainBack.rawValue)
         gameBackground.size = CGSize(width: size.width, height: size.height)
         gameBackground.position = CGPoint(x: size.width / 2, y: size.height / 2)
         addChild(gameBackground)

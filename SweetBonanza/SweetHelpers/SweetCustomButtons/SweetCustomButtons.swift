@@ -1,20 +1,6 @@
 import SwiftUI
 
-struct CustomButton: View {
-    var geometry: GeometryProxy
-    var text: String
-    var body: some View {
-        ZStack {
-            Image(.backForButton)
-                .resizable()
-                .frame(width: geometry.size.width * 0.662,
-                       height: geometry.size.height * 0.103)
-            
-            Text(text)
-                .Puffy(size: 45)
-        }
-    }
-}
+
 
 struct MusicButton: View {
     var text: String
